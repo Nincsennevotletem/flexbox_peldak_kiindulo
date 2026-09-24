@@ -1,0 +1,71 @@
+
+header{/* basic flexbox */
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page{/*nem törik meg, basic flexbox */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 5px;
+}
+.side-menu{/* A két gyermek elem máshogy működik hogy a töréspont jó legyen. */
+    flex: 0 0 150px;
+}
+.content{/* Engedélyezi a méretváltozásokat */
+    flex: 1;
+    
+}
+.footer-content{ 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+}
+.footer-column{
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+}
+.footer-links{ /* Engedélyezi a méretváltozást, szülő és gyermek elem egyszerre. */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.chart{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 20px;
+}
+.column{/* Semmit nem engedélyezünk méretügyileg. */
+    flex: 0 0 70px;
+}
+
+/* magasságok: */
+.html-column{
+    height: 65%;
+}
+.css-column{
+    height: 80%;
+}
+.js-column{
+    height: 55%;
+}
+.react-column{
+    height: 35%;
+}
+
+
+@media screen and (max-width: 620px){/* sor-ból oszloppá alakul a.page és engedélyez a side-menunek a méretváltoztatást 620pxes web méretnél */
+    .page{
+        flex-direction: column;
+    }
+    .side-menu{
+        flex: 1;
+    }
+}
